@@ -67,6 +67,8 @@ SPACE_ROOT_FREE: $ram_free MB
 
 echo $text
 
+temp="ttt"
+
 read -p "
 ---
 
@@ -75,8 +77,8 @@ if [[ $answer = "y" ]] || [[ $answer = "Y" ]];
 then
 file_name="$(date +%d)_$(date +%m)_$(date +%Y)_$(date +%H)_$(date +%M)_$(date +%S).status"
 
-
-$text > $file_name
+temp="ttt"
+$(temp) >> $file_name
 fi
 
 
