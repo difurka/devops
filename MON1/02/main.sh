@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function round_3 {
-echo $(python3 -c "print(round($1/1024.0/1024, 3))")
+echo $(python3 -c "print(round($1/1024.0/1024.0, 3))")
 }
 
 function round_2 {

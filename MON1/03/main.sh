@@ -63,25 +63,25 @@ then
             FN='\033[0m'
 
             text="
-${BL}${FL}HOSTNAME${FN} = ${BR}${FR}$(hostname)${FN}
-\n${BL}${FL}TIMEZONE${FN} = ${BR}${FR}$(cat /etc/timezone) $(date +%Z)${FN}
-\n${BL}${FL}USER${FN} = ${BR}${FR}$(whoami)${FN}
-\n${BL}${FL}OS${FN} = ${BR}${FR}$(cat /etc/issue | cut -d'\' -f1)${FN}
-\n${BL}${FL}DATE${FN} = ${BR}${FR}$(date +%d) $(date +%b) $(date +%Y) $(date +%T)${FN}
-\n${BL}${FL}UPTIME${FN} = ${BR}${FR}$(uptime -p)${FN}
-\n${BL}${FL}UPTIME_SEC${FN} = ${BR}${FR}$(cat /proc/uptime | cut -d' ' -f1)${FN}
-\n${BL}${FL}IP${FN} = ${BR}${FR}$ip${FN}
-\n${BL}${FL}MASK${FN} = ${BR}${FR}$(ifconfig | grep $ip | awk -F 'netmask'  '{print $2}' | cut -d ' ' -f2)${FN}
-\n${BL}${FL}GATEWAY${FN} = ${BR}${FR}$(ip route | grep default | cut -d ' ' -f3)${FN}
-\n${BL}${FL}RAM_TOTAL${FN} = ${BR}${FR}$ram_total GB${FN}
-\n${BL}${FL}RAM_USED${FN} = ${BR}${FR}$ram_used GB${FN}
-\n${BL}${FL}RAM_FREE${FN} = ${BR}${FR}$ram_free GB${FN}
-\n${BL}${FL}PACE_ROOT${FN} = ${BR}${FR}$ram_total MB${FN}
-\n${BL}${FL}SPACE_ROOT_USED${FN} = ${BR}${FR}$ram_used MB${FN}
-\n${BL}${FL}SPACE_ROOT_FREE${FN} = ${BR}${FR}$ram_free MB${FN}
-"
+            ${BL}${FL}HOSTNAME${FN} = ${BR}${FR}$(hostname)${FN}\
+            \n${BL}${FL}TIMEZONE${FN} = ${BR}${FR}$(cat /etc/timezone) $(date +%Z)${FN}\
+            \n${BL}${FL}USER${FN} = ${BR}${FR}$(whoami)${FN}
+            \n${BL}${FL}OS${FN} = ${BR}${FR}$(cat /etc/issue | cut -d'\' -f1)${FN}
+            \n${BL}${FL}DATE${FN} = ${BR}${FR}$(date +%d) $(date +%b) $(date +%Y) $(date +%T)${FN}
+            \n${BL}${FL}UPTIME${FN} = ${BR}${FR}$(uptime -p)${FN}
+            \n${BL}${FL}UPTIME_SEC${FN} = ${BR}${FR}$(cat /proc/uptime | cut -d' ' -f1)${FN}
+            \n${BL}${FL}IP${FN} = ${BR}${FR}$ip${FN}
+            \n${BL}${FL}MASK${FN} = ${BR}${FR}$(ifconfig | grep $ip | awk -F 'netmask'  '{print $2}' | cut -d ' ' -f2)${FN}
+            \n${BL}${FL}GATEWAY${FN} = ${BR}${FR}$(ip route | grep default | cut -d ' ' -f3)${FN}
+            \n${BL}${FL}RAM_TOTAL${FN} = ${BR}${FR}$ram_total GB${FN}
+            \n${BL}${FL}RAM_USED${FN} = ${BR}${FR}$ram_used GB${FN}
+            \n${BL}${FL}RAM_FREE${FN} = ${BR}${FR}$ram_free GB${FN}
+            \n${BL}${FL}PACE_ROOT${FN} = ${BR}${FR}$ram_total MB${FN}
+            \n${BL}${FL}SPACE_ROOT_USED${FN} = ${BR}${FR}$ram_used MB${FN}
+            \n${BL}${FL}SPACE_ROOT_FREE${FN} = ${BR}${FR}$ram_free MB${FN}
+            "
             
-            echo -e $text
+           echo -e ${text}
         else
             echo "The font and background colours of one column are matching"
         fi
@@ -89,5 +89,5 @@ ${BL}${FL}HOSTNAME${FN} = ${BR}${FR}$(hostname)${FN}
         echo "Parameters must be from 1 to 6"
     fi
 else
-    echo "IFNorrect number of parameters"
+    echo "Incorrect number of parameters"
 fi
