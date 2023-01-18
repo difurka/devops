@@ -28,22 +28,22 @@ root_free_in_mb=`df /boot/ -B1 | grep / | awk -F '[[:space:]][[:space:]]+' '{pri
 ram_free=$(round_2 $root_free_in_mb)
 
 text="
-HOSTNAME: $(hostname)
-\nTIMEZONE: $(cat /etc/timezone) $(date +%Z)
-\nUSER: $(whoami)
-\nOS: $(cat /etc/issue | cut -d'\' -f1)
-\nDATE: $(date +%d) $(date +%b) $(date +%Y) $(date +%T)
-\nUPTIME: $(uptime -p)
-\nUPTIME_SEC: $(cat /proc/uptime | cut -d' ' -f1)
-\nIP: $ip
-\nMASK: $(ifconfig | grep $ip | awk -F 'netmask'  '{print $2}' | cut -d ' ' -f2)
-\nGATEWAY: $(ip route | grep default | cut -d ' ' -f3)
-\nRAM_TOTAL: $ram_total GB
-\nRAM_USED: $ram_used GB
-\nRAM_FREE: $ram_free GB
-\nPACE_ROOT: $ram_total MB
-\nSPACE_ROOT_USED: $ram_used MB
-\nSPACE_ROOT_FREE: $ram_free MB
+HOSTNAME = $(hostname)
+\nTIMEZONE = $(cat /etc/timezone) $(date +%Z)
+\nUSER = $(whoami)
+\nOS = $(cat /etc/issue | cut -d'\' -f1)
+\nDATE = $(date +%d) $(date +%b) $(date +%Y) $(date +%T)
+\nUPTIME = $(uptime -p)
+\nUPTIME_SEC = $(cat /proc/uptime | cut -d' ' -f1)
+\nIP = $ip
+\nMASK = $(ifconfig | grep $ip | awk -F 'netmask'  '{print $2}' | cut -d ' ' -f2)
+\nGATEWAY = $(ip route | grep default | cut -d ' ' -f3)
+\nRAM_TOTAL = $ram_total GB
+\nRAM_USED = $ram_used GB
+\nRAM_FREE = $ram_free GB
+\nPACE_ROOT = $ram_total MB
+\nSPACE_ROOT_USED = $ram_used MB
+\nSPACE_ROOT_FREE = $ram_free MB
 "
 echo -e $text
 
