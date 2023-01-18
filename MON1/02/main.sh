@@ -26,16 +26,17 @@ echo "UPTIME_SEC: $time_in_sec"
 ip=`hostname -I`
 echo "IP: $ip"
 
-mask=`ifconfig | grep $ip |cut -d '$(ip)' -f 1-30`
+mask=`ifconfig enp0s3 | grep $ip | head -n 1 | cut -d ' ' -f 13`
 echo "MASK: $mask"
 
-# echo "GATEWAY: $user"
+gateway=`ip route | grep default | cut -d ' ' -f3`
+echo "GATEWAY: $gateway"
 
-# echo "RAM_TOTAL: $user"
+echo "RAM_TOTAL: $(free -g -h -t | grep Total | cut -d ' ' -f 9)"
 
-# echo "RAM_USED: $user"
+echo "RAM_USED: $(free -g -h -t | grep Total | cut -d ' ' -f 16)"
 
-# echo "RAM_FREE: $user"
+echo "RAM_FREE: $(free -g -h -t | grep Total | cut -d ' ' -f 9)"
 
 # echo "SPACE_ROOT: $user"
 
