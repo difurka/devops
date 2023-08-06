@@ -19,7 +19,7 @@ If matching values are entered, there is a message describing the problem.
 
 # RU
 
-Написан bash-скрипт. За основу взять скрипт из Part 2.
+Написан bash-скрипт. За основу взять скрипт из [Part 2](https://github.com/difurka/devops/tree/main/02).
 
 Скрипт запускается с 4 параметрами. Параметры числовые. От 1 до 6, например:
 script03.sh 1 3 4 5
